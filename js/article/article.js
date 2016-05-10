@@ -17,6 +17,7 @@ var eventListener = function (length) {
 
     var count = 0;
     window.addEventListener("scroll", function(e) {
+        e.preventDefault();
         count ++;
         console.log(count);
     });
