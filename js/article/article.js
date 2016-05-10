@@ -32,6 +32,15 @@ var eventListener = function (length) {
     document.addEventListener('touchend', function (e) {
         if (length.canRefresh) {
             length.canRefresh = false;
+            article.style.marginTop = "50px";
+            refresh(length, article);
         }
     });
+};
+
+var refresh = function (length, target) {
+    setTimeout(function () {
+        length.canRefresh = true;
+        target.style.marginTop = null;
+    }, 3000);
 };
