@@ -16,7 +16,7 @@ article {
     position: fixed;
     top: 55px;
     right: 0;
-    bottom: 50px;
+    /*bottom: 50px;*/
     left: 0;
     overflow-y: auto;
 }
