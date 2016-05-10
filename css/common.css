@@ -16,9 +16,10 @@ article {
     position: fixed;
     top: 55px;
     right: 0;
-    /*bottom: 50px;*/
+    bottom: 50px;
     left: 0;
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
 }
 article iframe {
     width: 100%;
