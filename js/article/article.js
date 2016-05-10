@@ -17,6 +17,8 @@ var eventListener = function (length) {
 
     document.addEventListener('touchstart', function (e) {
         if (window.scrollY != 0) {
+            length.start = 0;
+            length.end = 0;
             return ;
         }
         if (length.canRefresh) {
@@ -26,10 +28,14 @@ var eventListener = function (length) {
 
     document.addEventListener('touchmove', function (e) {
         if (window.scrollY != 0) {
+            length.start = 0;
+            length.end = 0;
             return ;
         }
         length.end = e.targetTouches[0].pageY;
         if (length.end < length.start) {
+            length.start = 0;
+            length.end = 0;
             return ;
         }
         if (length.canRefresh) {
@@ -40,9 +46,13 @@ var eventListener = function (length) {
 
     document.addEventListener('touchend', function (e) {
         if (window.scrollY != 0) {
+            length.start = 0;
+            length.end = 0;
             return ;
         }
         if (length.end < length.start) {
+            length.start = 0;
+            length.end = 0;
             return ;
         }
         if (length.canRefresh) {
