@@ -19,7 +19,7 @@ var eventListener = function (length) {
         if (window.scrollY != 0) {
             length.canRefresh = false;
         }
-        console.log(window);
+        console.log(window.parent);
         if (length.canRefresh) {
             length.start = e.targetTouches[0].pageY;
         }
