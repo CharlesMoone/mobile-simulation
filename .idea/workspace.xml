@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="61367c0a-d654-47d3-b5b7-dbda80f211c5" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/article/article.js" afterPath="$PROJECT_DIR$/js/article/article.js" />
     </list>
     <ignored path="mobile.iws" />
@@ -39,7 +37,7 @@
         <entry file="file://$PROJECT_DIR$/js/article/article.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="338">
-              <caret line="57" column="71" selection-start-line="57" selection-start-column="71" selection-end-line="57" selection-end-column="71" />
+              <caret line="57" column="95" selection-start-line="57" selection-start-column="95" selection-end-line="57" selection-end-column="95" />
               <folding>
                 <element signature="e#0#38#0" expanded="false" />
                 <element signature="e#1389#1436#0" expanded="false" />
@@ -106,8 +104,8 @@
         <option value="$PROJECT_DIR$/css/article/index.css" />
         <option value="$PROJECT_DIR$/html/article.html" />
         <option value="$PROJECT_DIR$/css/common.css" />
-        <option value="$PROJECT_DIR$/js/article/article.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/js/article/article.js" />
       </list>
     </option>
   </component>
@@ -276,12 +274,12 @@
       <workItem from="1462860916693" duration="43000" />
       <workItem from="1462861329773" duration="541000" />
       <workItem from="1462879089734" duration="328000" />
-      <workItem from="1462880399095" duration="1580000" />
+      <workItem from="1462880399095" duration="1739000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24837000" />
+    <option name="totallyTimeSpent" value="24996000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="896" extended-state="6" />
@@ -609,7 +607,7 @@
     <entry file="file://$PROJECT_DIR$/js/article/article.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="338">
-          <caret line="57" column="71" selection-start-line="57" selection-start-column="71" selection-end-line="57" selection-end-column="71" />
+          <caret line="57" column="95" selection-start-line="57" selection-start-column="95" selection-end-line="57" selection-end-column="95" />
           <folding>
             <element signature="e#0#38#0" expanded="false" />
             <element signature="e#1389#1436#0" expanded="false" />
