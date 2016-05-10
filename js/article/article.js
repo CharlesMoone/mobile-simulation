@@ -39,6 +39,7 @@ var eventListener = function (length) {
             return ;
         }
         if (length.canRefresh) {
+            console.log(length.start, length.end);
             e.preventDefault();
             article.style.marginTop = (length.end - length.start) + "px";
         }
