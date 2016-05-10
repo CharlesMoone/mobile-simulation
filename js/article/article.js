@@ -38,6 +38,8 @@ var eventListener = function (length) {
             } else {
                 article.style.marginTop = null;
                 length.canRefresh = true;
+                length.start = 0;
+                length.end = 0;
             }
         }
     });
@@ -46,6 +48,8 @@ var eventListener = function (length) {
 var refresh = function (length, target) {
     setTimeout(function () {
         length.canRefresh = true;
+        length.start = 0;
+        length.end = 0;
         target.style.marginTop = null;
     }, 3000);
 };
