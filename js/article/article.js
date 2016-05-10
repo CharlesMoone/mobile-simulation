@@ -17,27 +17,17 @@ var eventListener = function (length) {
 
     document.addEventListener('touchstart', function (e) {
         if (window.scrollY != 0) {
-            length.start = 0;
-            length.end = 0;
-            return ;
+            length.canRefresh = false;
         }
         if (length.canRefresh) {
-            e.preventDefault();
             length.start = e.targetTouches[0].pageY;
         }
     });
 
     document.addEventListener('touchmove', function (e) {
-        if (window.scrollY != 0) {
-            length.start = 0;
-            length.end = 0;
-            return ;
-        }
         length.end = e.targetTouches[0].pageY;
-        if (length.end < length.start) {
-            length.start = 0;
-            length.end = 0;
-            return ;
+        if (length.end <= length.start) {
+            length.canRefresh = false;
         }
         if (length.canRefresh) {
             e.preventDefault();
@@ -46,37 +36,16 @@ var eventListener = function (length) {
     });
 
     document.addEventListener('touchend', function (e) {
-        if (window.scrollY != 0) {
-            length.start = 0;
-            length.end = 0;
-            return ;
-        }
-        if (length.end < length.start) {
-            length.start = 0;
-            length.end = 0;
-            return ;
-        }
-        if (length.canRefresh) {
-            e.preventDefault();
-            length.canRefresh = false;
-            if (length.end - length.start >= 50) {
+        if(length.canRefresh) {
+            if (length.end - length.start > 50) {
                 article.style.marginTop = "50px";
-                refresh(length, article);
+                setTimeout(function () {
+                    article.style.marginTop = null;
+                }, 2000);
             } else {
                 article.style.marginTop = null;
-                length.canRefresh = true;
-                length.start = 0;
-                length.end = 0;
             }
         }
-    });
-};
-
-var refresh = function (length, target) {
-    setTimeout(function () {
         length.canRefresh = true;
-        length.start = 0;
-        length.end = 0;
-        target.style.marginTop = null;
-    }, 3000);
+    });
 };
