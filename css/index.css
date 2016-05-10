@@ -1,16 +1,16 @@
-section * {
+article section * {
     color: #7F6018;
 }
-section {
+article section {
     padding: 5px 3%;
     -webkit-animation: show 0.5s linear;
     -o-animation: show 0.5s linear;
     animation: show 0.5s linear;
 }
-section:nth-child(2n-1) {
+article section:nth-child(2n-1) {
     background: #F4F4F4;
 }
-section:first-child {
+article section:first-child {
     padding: 0;
     background: #FFFFFF;
 }
@@ -19,7 +19,7 @@ section:first-child {
     border: 0;
     width: 16px;
     height: 16px;
-    background: url("../../images/share.png") no-repeat 0 0/100% 100%;
+    background: url("../images/share.png") no-repeat 0 0/100% 100%;
 }
 
 @keyframes show {
@@ -30,11 +30,11 @@ section:first-child {
         opacity: 1;
     }
 }
-section:before {
+article section:before {
     content: '\20';
     display: block;
 }
-section:after {
+article section:after {
     content: '\20';
     display: block;
     clear: both;
