@@ -16,20 +16,35 @@ var eventListener = function (length) {
     var loading = document.getElementsByClassName("loading")[0];
 
     document.addEventListener('touchstart', function (e) {
+        if (window.scrollY != 0) {
+            return ;
+        }
         if (length.canRefresh) {
             length.start = e.targetTouches[0].pageY;
         }
     });
 
     document.addEventListener('touchmove', function (e) {
+        if (window.scrollY != 0) {
+            return ;
+        }
+        length.end = e.targetTouches[0].pageY;
+        if (length.end < length.start) {
+            return ;
+        }
         if (length.canRefresh) {
             e.preventDefault();
-            length.end = e.targetTouches[0].pageY;
             article.style.marginTop = (length.end - length.start) + "px";
         }
     });
 
     document.addEventListener('touchend', function (e) {
+        if (window.scrollY != 0) {
+            return ;
+        }
+        if (length.end < length.start) {
+            return ;
+        }
         if (length.canRefresh) {
             length.canRefresh = false;
             if (length.end - length.start >= 50) {
