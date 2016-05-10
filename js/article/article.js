@@ -19,7 +19,7 @@ var eventListener = function (length) {
         if (window.scrollY != 0) {
             length.canRefresh = false;
         }
-        console.log(window.parent);
+        console.log(window.scrollY);
         if (length.canRefresh) {
             length.start = e.targetTouches[0].pageY;
         }
@@ -27,6 +27,7 @@ var eventListener = function (length) {
 
     document.addEventListener('touchmove', function (e) {
         length.end = e.targetTouches[0].pageY;
+        window.scrollY += length.start - length.end;
         if (length.end <= length.start) {
             length.canRefresh = false;
         }
