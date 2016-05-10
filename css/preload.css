@@ -1,0 +1,36 @@
+.finish {
+    opacity: 1;
+    width: 100% !important;
+}
+.preload {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: #B8CFE8;
+    -webkit-animation: bgLinear 0.2s linear;
+    -o-animation: bgLinear 0.2s linear;
+    animation: bgLinear 0.2s linear;
+}
+@keyframes bgLinear { from {  opacity: 0;  } to {  opacity: 1;  } }
+@-webkit-keyframes bgLinear { from {  opacity: 0;  } to {  opacity: 1;  } }
+@-moz-keyframes bgLinear { from {  opacity: 0;  } to {  opacity: 1;  } }
+@-ms-keyframes bgLinear { from {  opacity: 0;  } to {  opacity: 1;  } }
+@-o-keyframes bgLinear { from {  opacity: 0;  } to {  opacity: 1;  } }
+@-khtml-keyframes bgLinear { from {  opacity: 0;  } to {  opacity: 1;  } }
+.preload div {
+    width: 75%;
+    height: 3px;
+    border-radius: 0 1px 1px 0;
+    background: #008BE4;
+    -webkit-animation: processLoad 1s linear;
+    -o-animation: processLoad 1s linear;
+    animation: processLoad 1s linear;
+}
+@keyframes processLoad { from {  width: 0;  } to {  width: 75%;  } }
+@-webkit-keyframes processLoad { from {  width: 0;  } to {  width: 75%;  } }
+@-moz-keyframes processLoad { from {  width: 0;  } to {  width: 75%;  } }
+@-ms-keyframes processLoad { from {  width: 0;  } to {  width: 75%;  } }
+@-o-keyframes processLoad { from {  width: 0;  } to {  width: 75%;  } }
+@-khtml-keyframes processLoad { from {  width: 0;  } to {  width: 75%;  } }
