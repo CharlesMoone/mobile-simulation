@@ -6,7 +6,7 @@ window.onload = function () {
     preload.children[0].className = "finish";
     preload.remove();
 
-    var length = {start: 0, end: 0, canRefresh: true};
+    var length = {start: 0, end: 0, canRefresh: true, canNode: true};
     eventListener(length);
 };
 
@@ -19,7 +19,7 @@ var eventListener = function (length) {
             return ;
         }
         length.start = length.end = e.targetTouches[0].pageY;
-        var loading = new Node({node: "DIV", class: "loading"}, document.getElementsByTagName("section")[0], "松开就加载给你看!");
+
     });
 
     document.addEventListener('touchmove', function (e) {
@@ -27,6 +27,10 @@ var eventListener = function (length) {
         var realLength = length.end - length.start;
         if (!length.canRefresh || realLength <= 0 || window.scrollY != 0) {
             return ;
+        }
+        if (length.canNode && realLength > 5) {
+            var loading = new Node({node: "DIV", class: "loading"}, document.getElementsByTagName("section")[0], "松开就加载给你看!");
+            length.canNode = false;
         }
         e.preventDefault();
         article.style.marginTop = realLength + "px";
@@ -70,6 +74,7 @@ var refresh = function (length, target, loading) {
         var article = document.getElementById("article");
         target.style.marginTop = null;
         length.canRefresh = true;
+        length.canNode = true;
 
         var i, section, h4, p, button;
         for (i = 0; i < 4; i ++) {
