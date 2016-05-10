@@ -28,7 +28,7 @@ var eventListener = function (length) {
         if (!length.canRefresh || realLength <= 0 || window.scrollY != 0) {
             return ;
         }
-        if (length.canNode && realLength > 5) {
+        if (length.canNode && realLength > 5 && window.scrollY == 0) {
             var loading = new Node({node: "DIV", class: "loading"}, document.getElementsByTagName("section")[0], "松开就加载给你看!");
             length.canNode = false;
         }
