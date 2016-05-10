@@ -25,9 +25,8 @@ var eventListener = function (length) {
     });
 
     document.addEventListener('touchmove', function (e) {
-        length.end > e.targetTouches[0].pageY ? window.scrollY ++ : window.scrollY --;
         length.end = e.targetTouches[0].pageY;
-        console.log(window.scrollY);
+        console.log(document.body.scrollTop);
         if (length.end <= length.start) {
             length.canRefresh = false;
         }
