@@ -55,7 +55,7 @@ var eventListener = function (length) {
         //     }
         // }
 
-        if (length.canRefresh && realLength > 50) {
+        if (length.canRefresh && realLength > 50 && window.scrollY == 0) {
             loading.innerHTML = "好吧,那就加载给你看!";
             // length.end = length.start + 50;
             article.style.marginTop = "50px";
