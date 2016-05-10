@@ -22,6 +22,7 @@ var eventListener = function (length) {
             return ;
         }
         if (length.canRefresh) {
+            e.preventDefault();
             length.start = e.targetTouches[0].pageY;
         }
     });
@@ -39,7 +40,6 @@ var eventListener = function (length) {
             return ;
         }
         if (length.canRefresh) {
-            console.log(length.start, length.end);
             e.preventDefault();
             article.style.marginTop = (length.end - length.start) + "px";
         }
@@ -57,6 +57,7 @@ var eventListener = function (length) {
             return ;
         }
         if (length.canRefresh) {
+            e.preventDefault();
             length.canRefresh = false;
             if (length.end - length.start >= 50) {
                 article.style.marginTop = "50px";
