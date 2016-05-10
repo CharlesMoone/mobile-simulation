@@ -19,15 +19,15 @@ var eventListener = function (length) {
         if (window.scrollY != 0) {
             length.canRefresh = false;
         }
-        console.log(window.scrollY);
         if (length.canRefresh) {
-            length.start = e.targetTouches[0].pageY;
+            length.start = length.end = e.targetTouches[0].pageY;
         }
     });
 
     document.addEventListener('touchmove', function (e) {
+        length.end > e.targetTouches[0].pageY ? window.scrollY ++ : window.scrollY --;
         length.end = e.targetTouches[0].pageY;
-        window.scrollY += length.start - length.end;
+        console.log(window.scrollY);
         if (length.end <= length.start) {
             length.canRefresh = false;
         }
