@@ -15,6 +15,12 @@ var eventListener = function (length) {
     var article = document.getElementsByTagName("article")[0];
     var loading = document.getElementsByClassName("loading")[0];
 
+    var count = 0;
+    window.addEventListener("scroll", function(e) {
+        count ++;
+        console.log(count);
+    });
+
     document.addEventListener('touchstart', function (e) {
         if (window.scrollY != 0) {
             length.canRefresh = false;
@@ -26,7 +32,6 @@ var eventListener = function (length) {
 
     document.addEventListener('touchmove', function (e) {
         length.end = e.targetTouches[0].pageY;
-        console.log(document.body.scrollTop);
         if (length.end <= length.start) {
             length.canRefresh = false;
         }
