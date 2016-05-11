@@ -6,7 +6,7 @@ window.onload = function () {
     preload.children[0].className = "finish";
     preload.remove();
 
-    var length = {start: 0, end: 0, canRefresh: true};
+    var length = {start: 0, end: 0, canRefresh: true, isRefresh: false};
     eventListener(length);
 };
 
@@ -41,6 +41,11 @@ var eventListener = function (length) {
     document.addEventListener('touchend', function (e) {
         if(length.canRefresh) {
             if (length.end - length.start > 50) {
+                if (length.isRefresh) {
+                    article.style.marginTop = "50px";
+                    return ;
+                }
+                length.isRefresh = true;
                 loading.innerHTML = "哼,说加载就加载";
                 article.style.marginTop = "50px";
                 setTimeout(function () {
@@ -53,6 +58,7 @@ var eventListener = function (length) {
                         h4 = new Node({node: "H4"}, div.n, "this is title " + i);
                         p = new Node({node: "P"}, div.n, "this is a description about the title.");
                         button = new Node({node: "BUTTON", class: "share"}, section.n);
+                        length.isRefresh = false;
                     }
                     loading.innerHTML = "在拉就加载给你看";
                 }, 2000);
@@ -70,5 +76,6 @@ var panel = function () {
     iframe = new Node({node: "IFRAME"}, div.n);
     iframe.n.setAttribute("frameborder", 0);
     iframe.n.setAttribute("src", "html/images.html");
+    div.n.style.width = window.innerWidth + "px";
     div.n.style.display = "block";
 };
