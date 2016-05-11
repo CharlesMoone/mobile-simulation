@@ -28,7 +28,8 @@ var eventListener = function (length) {
         length.end = e.targetTouches[0].pageY;
         if (length.end <= length.start) {
             length.canRefresh = false;
-        } else if (length.end > length.start && window.scrollY == 0) {
+            article.style.marginTop = null;
+        } else if (window.scrollY == 0) {
             length.canRefresh = true;
         }
         if (length.canRefresh) {
