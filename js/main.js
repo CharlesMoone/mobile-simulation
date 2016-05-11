@@ -45,11 +45,13 @@ var eventListener = function (length) {
                 article.style.marginTop = "50px";
                 setTimeout(function () {
                     article.style.marginTop = null;
-                    var i, section, h4, p, button;
+                    var i, section, div, h4, p, button;
                     for (i = 0; i < 4; i ++) {
                         section = new Node({node: "SECTION", before: true, beforeNumber: 1}, article);
-                        h4 = new Node({node: "H4"}, section.n, "this is title " + i);
-                        p = new Node({node: "P"}, section.n, "this is a description about the title.");
+                        div = new Node({node: "DIV"}, section.n);
+                        div.n.setAttribute("onclick", "panel()");
+                        h4 = new Node({node: "H4"}, div.n, "this is title " + i);
+                        p = new Node({node: "P"}, div.n, "this is a description about the title.");
                         button = new Node({node: "BUTTON", class: "share"}, section.n);
                     }
                     loading.innerHTML = "在拉就加载给你看";
@@ -60,4 +62,13 @@ var eventListener = function (length) {
         }
         length.canRefresh = true;
     });
+};
+
+var panel = function () {
+    var div, iframe;
+    div = new Node({node: "DIV", class: "panel", before: true}, document.getElementsByTagName("body")[0]);
+    iframe = new Node({node: "IFRAME"}, div.n);
+    iframe.n.setAttribute("frameborder", 0);
+    iframe.n.setAttribute("src", "html/images.html");
+    div.n.style.display = "block";
 };
