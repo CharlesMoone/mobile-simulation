@@ -16,6 +16,9 @@ var eventListener = function (length) {
     var loading = document.getElementsByClassName("loading")[0];
 
     document.addEventListener('touchstart', function (e) {
+        if (e.target == document.getElementsByTagName('h3')[0] || e.target == document.getElementsByTagName('footer')[0]) {
+            return ;
+        }
         if (window.scrollY != 0) {
             length.canRefresh = false;
         }
@@ -25,6 +28,9 @@ var eventListener = function (length) {
     });
 
     document.addEventListener('touchmove', function (e) {
+        if (e.target == document.getElementsByTagName('h3')[0] || e.target == document.getElementsByTagName('footer')[0]) {
+            return ;
+        }
         length.end = e.targetTouches[0].pageY;
         if (length.end <= length.start) {
             length.canRefresh = false;
@@ -39,6 +45,9 @@ var eventListener = function (length) {
     });
 
     document.addEventListener('touchend', function (e) {
+        if (e.target == document.getElementsByTagName('h3')[0] || e.target == document.getElementsByTagName('footer')[0]) {
+            return ;
+        }
         if(length.canRefresh) {
             if (length.end - length.start > 50) {
                 if (length.isRefresh) {
@@ -76,6 +85,7 @@ var panel = function () {
     iframe = new Node({node: "IFRAME"}, div.n);
     iframe.n.setAttribute("frameborder", 0);
     iframe.n.setAttribute("src", "html/images.html");
+    document.getElementsByTagName("footer")[0].style.display = "none";
     div.n.style.width = window.innerWidth + "px";
     div.n.style.display = "block";
 };
