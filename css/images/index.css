@@ -1,3 +1,9 @@
-section img {
-    width: 20%;
+section:before {
+    content: '\20';
+    display: block;
+}
+section:after {
+    content: '\20';
+    display: block;
+    clear: both;
 }
